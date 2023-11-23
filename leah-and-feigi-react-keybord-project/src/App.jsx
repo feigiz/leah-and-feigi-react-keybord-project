@@ -5,14 +5,15 @@ import Language from './components/language'
 
 
 function App() {
-  const [count, setCount] = useState('')
+  const [caption, setCaption] = useState('')
   const Hebrew = ["א", "ב", "ג", "ד"];
   const language = ["English", "עברית"];
   return (
     <>
+    <p>{caption}</p>
       {language.map((language, i) => <Language key={i} languages={language} />)}
       <br />
-      {Hebrew.map((letter, i) => <Keys key={i} letters={letter} />)}
+      {Hebrew.map((letter, i) => <Keys key={i} letters={letter} setting={setCaption} />)}
     </>
 
   )
