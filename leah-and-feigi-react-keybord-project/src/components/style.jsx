@@ -5,7 +5,8 @@ function Style(props) {
 
     return <>
     <ChangeColor setStyle={props.setStyle}/>
-    <ChangeSize setStyle={props.setStyle}/>
+    <br /><br />
+    <ChangeSize setStyle={props.setStyle}  style={props.style}/>
     </>
 }
 export default Style;

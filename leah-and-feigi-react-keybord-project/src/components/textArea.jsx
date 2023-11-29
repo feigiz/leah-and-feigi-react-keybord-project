@@ -8,7 +8,7 @@ function TextArea(props) {
     return (
         <>
             <div>
-                {console.log(props.caption.letter)}
+                {/* {console.log(props.caption.letter)} */}
                 {props.caption.map((element, index) => {
                     return <span style={element.style} key={index}>{element.letter}</span>
                 })}

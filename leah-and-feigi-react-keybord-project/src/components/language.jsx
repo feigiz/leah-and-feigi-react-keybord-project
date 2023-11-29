@@ -32,13 +32,12 @@ function Language(props) {
     }
 
     function writing(event) {
-        //alert(event)
         if (event == "deleteLetter")
             props.setCaption(prevText => ([...prevText].filter(function (event, arrIndex) {
                 return prevText.length - 1 !== arrIndex;
             })));
         else
-            props.setCaption(prevText => ([...prevText, event]))
+            props.setCaption(prevText => ([...prevText, { letter: event, style: props.style }]))
     }
 
     const getCapsLock = () => {
@@ -58,7 +57,7 @@ function Language(props) {
         {language == 'English' && <button onClick={changeCapsLock}>{capslock == 'Lowercase' ? 'UPPERCASE' : 'lowercase'}</button>}
         <Keys getLanguage={getLanguage} setting={writing} />
         <Special setting={writing} />
-        <Style setStyle={props.setStyle}/>
+        <Style setStyle={props.setStyle} style={props.style}/>
 
 
     </>

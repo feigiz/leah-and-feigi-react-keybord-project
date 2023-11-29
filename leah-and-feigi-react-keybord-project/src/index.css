@@ -65,4 +65,8 @@ button:focus-visible {
   button {
     background-color: rgb(123, 209, 212);
   }
+  img{
+    width: 20px;
+    height: 20px;
+  }
 }
