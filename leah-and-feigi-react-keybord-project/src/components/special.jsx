@@ -1,6 +1,10 @@
 function Special(props) {
+    const Specials = [{ name: "enter", value: <br /> }, { name: "_________________________", value: " " }, { name: "Backspace", value: "deleteLetter" }, { name: "Undo", value: "//" }]
+
     return <>
-        <button onClick={() => props.setting(props.char.value)}>{props.char.name}</button>
+
+       {Specials.map((char, i) =>  <button key={'char_'+i} onClick={() => props.setting(char.value)}>{char.name}</button>)}
+
     </>
 }
 export default Special;
