@@ -3,16 +3,30 @@ import increasing from '../img/increasing.png';
 import decreasing from '../img/decreasing.png';
 
 function ChangeSize(props) {
-    const [size, setSize] = useState( props.style.fontSize);
+    const [size, setSize] = useState(props.style.fontSize);
     function add() {
-        setSize(prevSize=>(prevSize+10))
-        set();      
+        if (size < 100) {
+            setSize(prevSize => (prevSize + 10))
+            set(size + 10);
+        }
+        else
+        {
+            setSize(prevSize => (prevSize))
+            set(size);
+        }
     }
     function sub() {
-        setSize(prevSize=>(prevSize-10))
-        set();
+        if (size > 10) {
+            setSize(prevSize => (prevSize - 10))
+            set(size - 10);
+        }
+        else
+        {
+            setSize(prevSize => (prevSize))
+            set(size);
+        }
     }
-    const set=()=>(props.setStyle(prvStyle => ({ ...prvStyle, fontSize: size})))
+    const set = (event) => (props.setStyle(prvStyle => ({ ...prvStyle, fontSize: event })))
     return <>
         <img onClick={() => add()} src={increasing} />
         <img onClick={() => sub()} src={decreasing} />
