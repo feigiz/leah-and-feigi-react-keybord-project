@@ -1,11 +1,11 @@
 import './App.css'
-import Keybord from './components/keybord'
+import TextEditor from './components/textEditor'
 
 
 function App() {
   return (
     <>
-      <Keybord/>
+      <TextEditor/>
     </>
   )
 }

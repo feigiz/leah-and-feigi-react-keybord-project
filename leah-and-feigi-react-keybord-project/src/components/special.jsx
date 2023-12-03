@@ -1,5 +1,5 @@
 function Special(props) {
-    const Specials = [{ name: "enter", value: <br /> }, { name: "_________________________", value: " " }, { name: "Backspace", value: "deleteLetter" }, { name: "Undo", value: "//" }]
+    const Specials = [{ name: "enter", value: <br /> }, { name: "_________________________", value: " " }, { name: "Backspace", value: "deleteLetter" }]
 
     return <>
 
