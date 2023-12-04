@@ -41,8 +41,10 @@ function Keyboard(props) {
 
     function writing(event) {
         if (event == "deleteLetter") {
-            props.setLast(prevAction => ([...prevAction, { type: "delete", value: props.caption[props.caption.length - 1] }]));
-            props.setCaption(prevText => ([...prevText].filter((event, arrIndex) => (prevText.length - 1 !== arrIndex))));
+            if (props.caption.length > 0) {
+                props.setLast(prevAction => ([...prevAction, { type: "delete", value: props.caption[props.caption.length - 1] }]));
+                props.setCaption(prevText => ([...prevText].filter((event, arrIndex) => (prevText.length - 1 !== arrIndex))));
+            }
         }
         else {
             props.setLast(prevAction => ([...prevAction, { type: "writing", value: event }]));
