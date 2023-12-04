@@ -6,6 +6,7 @@ function ChangeFont(props) {
     }
 
     function setFontsOfAll(event) {
+        props.setLast(prevaction => ([...prevaction, { type: "changeFont", value: props.caption }]));
         props.setCaption(prevText => (prevText.map((element) => ({ letter: element.letter, style: { ...element.style, fontFamily: event } }))))
     }
     return <>
@@ -13,9 +14,6 @@ function ChangeFont(props) {
         <div>
             {fonts.map((font, i) => <button style={{ fontFamily: font }} key={'font_' + i} onClick={() => setFonts(font)}>{font}</button>)}
         </div>
-
-        {/* <br /><br /> */}
-
         <h3>change font of all to:</h3>
         <div>
             {fonts.map((font, i) => <button style={{ fontFamily: font }} key={'font_' + i} onClick={() => setFontsOfAll(font)}>{font}</button>)}

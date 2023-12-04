@@ -12,19 +12,13 @@ function Style(props) {
             case "to UpperCase":
                 props.setCaption(prevText => (prevText.map((element) => ({ letter: element.letter.toUpperCase(), style: element.style }))))
                 break;
-            // default:
-            //     // props.setCaption(prevText => (prevText.map((element) => ({ letter: element.letter, style: { ...element.style, color: event } }))))
-            //     break;
         }
     }
 
     return <>
-        <ChangeColor setStyle={props.setStyle} setCaption={props.setCaption} />
-        {/* <br /><br /> */}
-        <ChangeSize setStyle={props.setStyle} style={props.style} setCaption={props.setCaption} />
-        <br />
-        <ChangeFont setStyle={props.setStyle} setCaption={props.setCaption} />
-        {/* <br /><br /> */}
+        <ChangeColor setStyle={props.setStyle} setCaption={props.setCaption} setLast={props.setLast} caption={props.caption} />
+        <ChangeSize setStyle={props.setStyle} style={props.style} setCaption={props.setCaption} setLast={props.setLast} caption={props.caption} />
+        <ChangeFont setStyle={props.setStyle} setCaption={props.setCaption} setLast={props.setLast} caption={props.caption} />
         <h3>change case of all to:</h3>
         <div>
             <button onClick={() => changeAllFormat("to LowerCase")}>LowerCase</button>
@@ -34,5 +28,3 @@ function Style(props) {
 }
 export default Style;
 
-// if (event == "cac")
-//     props.setCaption(prevText => (prevText.map((element, index) => ({ letter: element.letter.toUpperCase(), style: { ...element.style, color: 'Violet' } }))))

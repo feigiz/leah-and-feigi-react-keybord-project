@@ -5,6 +5,7 @@ function ChangeColor(props) {
     }
 
     function changeAllColor(event) {
+        props.setLast(prevaction => ([...prevaction, { type: "changeColor", value: props.caption }]));
         props.setCaption(prevText => (prevText.map((element) => ({ letter: element.letter, style: { ...element.style, color: event } }))))
     }
 
@@ -13,9 +14,6 @@ function ChangeColor(props) {
         <div>
             {colors.map((color, i) => <button style={{ backgroundColor: color }} key={'color_' + i} onClick={() => setColor(color)}></button>)}
         </div>
-
-        {/* <br /><br /> */}
-
         <h3>change color of all to:</h3>
         <div>
             {colors.map((color, i) => <button style={{ backgroundColor: color }} key={'color_' + i} onClick={() => changeAllColor(color)}></button>)}

@@ -1,9 +1,7 @@
 import { useState } from "react";
 import increasing from '../img/increasing.png';
 import decreasing from '../img/decreasing.png';
-// props.setCaption(prevText => (prevText.map((element) => ({ letter: element.letter, style: { ...element.style, color: event } }))))
 const sizes = [10, 30, 50, 70, 90]
-// props.setStyle(prvStyle => ({ ...prvStyle, color: event }))
 function ChangeSize(props) {
     const [size, setSize] = useState(props.style.fontSize);
     // const [sizeAll, setSizeAll] = useState(props.style.fontSize);
@@ -50,8 +48,10 @@ function ChangeSize(props) {
     //     }
     // }
 
-
-    const setAll = (event) => props.setCaption(prevText => (prevText.map((element) => ({ letter: element.letter, style: { ...element.style, fontSize: event } }))))
+    function setAll(event) {
+        props.setLast(prevaction => ([...prevaction, { type: "changeSize", value: props.caption }]));
+        props.setCaption(prevText => (prevText.map((element) => ({ letter: element.letter, style: { ...element.style, fontSize: event } }))))
+    }
     const set = (event) => (props.setStyle(prvStyle => ({ ...prvStyle, fontSize: event })))
     return <>
         <h3>change font size</h3>
