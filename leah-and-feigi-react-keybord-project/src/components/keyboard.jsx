@@ -68,10 +68,14 @@ function Keyboard(props) {
     return <>
         <button onClick={changeLanguage}>{language == 'Hebrew' ? 'English' : 'עברית'}</button>
         {language == 'English' && <button onClick={changeCapsLock}>{capslock == 'Lowercase' ? 'UPPERCASE' : 'lowercase'}</button>}
-        <Keys getLanguage={getLanguage} setting={writing} />
+        <button onClick={() => setlanguage('emojis')}>😊</button>
+        <button onClick={() => setlanguage('nums and chars')}>123 !?</button>
+        <br />      
+        <br />      
+        <div style={{ width: 500 }}><Keys getLanguage={getLanguage} setting={writing} /></div>
         <Special setting={writing} />
-        <button onClick={() => setlanguage('emojis')}>Emojis</button>
-        <button onClick={() => setlanguage('nums and chars')}>numbers & chars</button>
+
+        {/* <button onClick={() => setlanguage('nums and chars')}>numbers & chars</button> */}
     </>
 }
 export default Keyboard;

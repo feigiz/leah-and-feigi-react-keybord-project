@@ -47,14 +47,17 @@ function TextEditor() {
     }
 
     return <>
-        <button onClick={undo}>Undo</button>
+
         <TextArea caption={caption} />
         {console.log(caption)}
-        <br />
+        {/* <br /> */}
         <Keyboard setCaption={setCaption} style={style} setLast={setLast} caption={caption} />
-        <br />
-        <Style setStyle={setStyle} style={style} setCaption={setCaption} setLast={setLast} caption={caption} />
+        {/* <br /> */}
         <button onClick={clearAll}>clear all</button>
+        <button onClick={undo}>ctrl+Z</button>           
+        <Style setStyle={setStyle} style={style} setCaption={setCaption} setLast={setLast} caption={caption} />
+        <br />
+     
 
     </>
 }
