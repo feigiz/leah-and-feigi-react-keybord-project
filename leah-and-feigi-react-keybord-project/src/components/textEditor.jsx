@@ -16,13 +16,9 @@ function TextEditor() {
         const lastAction = last.pop();
         switch (lastAction.type) {
             case "delete":
-                // setLast(prevAction => ([...prevAction, { type: "writing", value: lastAction.value }]));
-                //צריך את ה value?
                 setCaption(prevText => ([...prevText, { letter: lastAction.value.letter, style: style }]));
                 break;
             case "writing":
-                // props.setLast(prevAction => ([...prevAction, { type: "delete", value: props.caption[props.caption.length - 1] }]));
-                // לא נכון עד הסוף השורה למעלה
                 setCaption(prevText => ([...prevText].filter((event, arrIndex) => (prevText.length - 1 !== arrIndex))));
                 break;
             case "changeColor":
@@ -50,9 +46,7 @@ function TextEditor() {
 
         <TextArea caption={caption} />
         {console.log(caption)}
-        {/* <br /> */}
         <Keyboard setCaption={setCaption} style={style} setLast={setLast} caption={caption} />
-        {/* <br /> */}
         <button onClick={clearAll}>clear all</button>
         <button onClick={undo}>ctrl+Z</button>           
         <Style setStyle={setStyle} style={style} setCaption={setCaption} setLast={setLast} caption={caption} />

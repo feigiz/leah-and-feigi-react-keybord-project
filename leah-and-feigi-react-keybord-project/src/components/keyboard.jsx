@@ -74,8 +74,6 @@ function Keyboard(props) {
         <br />      
         <div style={{ width: 500 }}><Keys getLanguage={getLanguage} setting={writing} /></div>
         <Special setting={writing} />
-
-        {/* <button onClick={() => setlanguage('nums and chars')}>numbers & chars</button> */}
     </>
 }
 export default Keyboard;
