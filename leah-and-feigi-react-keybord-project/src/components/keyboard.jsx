@@ -70,7 +70,7 @@ function Keyboard(props) {
         <button onClick={() => setlanguage('nums and chars')}>123 !?</button>
 
         <div id='keyboard'><Keys getLanguage={getLanguage} setting={writing} /></div>
-        <Special setting={writing} />
+        {/* <Special setting={writing} /> */}
     </>
 }
 export default Keyboard;
