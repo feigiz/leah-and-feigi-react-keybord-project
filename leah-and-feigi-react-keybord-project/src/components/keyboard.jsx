@@ -2,7 +2,6 @@ import Keys from './keys';
 import Special from './special';
 import { useState } from 'react';
 
-
 function Keyboard(props) {
     const [language, setlanguage] = useState('Hebrew');
     const [capslock, setCapslock] = useState('Lowercase');
@@ -53,7 +52,6 @@ function Keyboard(props) {
         }
     }
 
-
     const getCapsLock = () => {
         switch (capslock) {
             case 'Lowercase':
@@ -70,9 +68,8 @@ function Keyboard(props) {
         {language == 'English' && <button onClick={changeCapsLock}>{capslock == 'Lowercase' ? 'UPPERCASE' : 'lowercase'}</button>}
         <button onClick={() => setlanguage('emojis')}>😊</button>
         <button onClick={() => setlanguage('nums and chars')}>123 !?</button>
-        <br />      
-        <br />      
-        <div style={{ width: 500 }}><Keys getLanguage={getLanguage} setting={writing} /></div>
+
+        <div id='keyboard'><Keys getLanguage={getLanguage} setting={writing} /></div>
         <Special setting={writing} />
     </>
 }

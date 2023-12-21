@@ -5,11 +5,30 @@
   text-align: center;
 }
 
-button{
+button {
   margin: 2px;
   background-color: rgb(123, 209, 212);
 }
 
-button:hover{
+button:hover {
   background-color: rgb(38, 133, 136);
+}
+
+/* #container {
+  display: flex;
+}
+
+#stylig,
+#typing {
+  margin: 50px;
+} */
+
+#textArea {
+  border: 1px solid black;
+  min-height: 40px;
+}
+
+#keyboard {
+  margin-top: 10px;
+  width: 500px;
 }
