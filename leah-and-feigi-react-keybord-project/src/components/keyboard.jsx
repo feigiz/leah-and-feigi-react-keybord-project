@@ -1,5 +1,4 @@
 import Keys from './keys';
-import Special from './special';
 import { useState } from 'react';
 
 function Keyboard(props) {
@@ -47,7 +46,6 @@ function Keyboard(props) {
         }
         else {
             props.setLast(prevAction => ([...prevAction, { type: "writing", value: event }]));
-            //צריך את ה value?
             props.setCaption(prevText => ([...prevText, { letter: event, style: props.style }]));
         }
     }
@@ -68,9 +66,7 @@ function Keyboard(props) {
         {language == 'English' && <button onClick={changeCapsLock}>{capslock == 'Lowercase' ? 'UPPERCASE' : 'lowercase'}</button>}
         <button onClick={() => setlanguage('emojis')}>😊</button>
         <button onClick={() => setlanguage('nums and chars')}>123 !?</button>
-
         <div id='keyboard'><Keys getLanguage={getLanguage} setting={writing} /></div>
-        {/* <Special setting={writing} /> */}
     </>
 }
 export default Keyboard;

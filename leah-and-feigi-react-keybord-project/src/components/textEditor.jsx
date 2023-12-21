@@ -9,7 +9,7 @@ function TextEditor() {
     const [last, setLast] = useState([]);
 
     function undo() {
-        if(last.length<=0)
+        if (last.length <= 0)
             return;
         const lastAction = last.pop();
         switch (lastAction.type) {
@@ -39,18 +39,16 @@ function TextEditor() {
         setCaption([])
     }
 
-    return <div id='container'>
-        <div id='typing'>
-        <TextArea caption={caption} />
-        {/* {console.log(caption)} */}
-        <Keyboard setCaption={setCaption} style={style} setLast={setLast} caption={caption} />
-        <button onClick={clearAll}>clear all</button>
-        <button onClick={undo}>ctrl+Z</button>              
+    return <>
+        <div>
+            <TextArea caption={caption} />
+            <Keyboard setCaption={setCaption} style={style} setLast={setLast} caption={caption} />
+            <button onClick={clearAll}>clear all</button>
+            <button onClick={undo}>ctrl+Z</button>
         </div>
-         <div id='styling'>
-        <Style setStyle={setStyle} style={style} setCaption={setCaption} setLast={setLast} caption={caption} />            
-         </div>
-{/* צריך את השמות של הדיבים? */}
-    </div>
+        <div>
+            <Style setStyle={setStyle} style={style} setCaption={setCaption} setLast={setLast} caption={caption} />
+        </div>
+    </>
 }
 export default TextEditor;
